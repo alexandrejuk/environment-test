@@ -7,7 +7,8 @@ jobs:
       name: node/default
     steps:
       - run: echo $CIRCLE_BRANCH
-      - run: if [ $CIRCLE_BRANCH == 'master' ]; then REACT_APP_MY_NAME=ALEXANDRE; else REACT_APP_MY_NAME=SEM_NOME; fi
+      - run: echo 'export REACT_APP_MY_NAME="test"' >> $BASH_ENV
+      - run: source $BASH_ENV
       - run: echo $REACT_APP_MY_NAME
 workflows:
     build-and-test:
