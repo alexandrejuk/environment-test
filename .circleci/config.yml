@@ -7,7 +7,7 @@ jobs:
       name: node/default
     steps:
       - run: echo $CIRCLE_BRANCH
-      - run: if [ $CIRCLE_BRANCH == "master" ]; then export REACT_APP_MY_NAME="ALEXANDRE"; else export REACT_APP_MY_NAME="SEM NOME"; fi
+      - run: if [ $CIRCLE_BRANCH == 'master' ]; then export REACT_APP_MY_NAME=ALEXANDRE; else export REACT_APP_MY_NAME=SEM_NOME; fi
       - run: echo $REACT_APP_MY_NAME
 workflows:
     build-and-test:
